@@ -1,0 +1,23 @@
+{
+    "name": "gaia/tekton",
+    "description": "Form builder package for laravel",
+    "authors": [
+        {
+            "name": "Valentino Ekaputra",
+            "email": "silentrazgriz@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gaia\\Tekton\\TektonServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Gaia\\Tekton\\": "src/"
+        }
+    }
+}
