@@ -2,7 +2,8 @@
         @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
         method="{{ $tekton['method'] }}"
         action="{{ $tekton['url'] }}"
-        class="tekton-form"
+        class="tekton-form needs-validation"
+        novalidate
 >
     @csrf
     @include('tekton::buttons.group.top', ['button' => $tekton['options']['button']])
@@ -34,8 +35,11 @@
     @foreach($tekton['rows'] as $row)
         @foreach($row['fields'] as $field)
             @if (config('tekton.scripts.' . $field['type']) && !in_array($field['type'], $tektonScripts))
-                @php(array_push($tektonScripts, $field['type']))
-                <script src="{{ asset('vendor/tekton/js/' . $field['type'] . '.js') }}" type="text/javascript"></script>
+                @php($scripts = config('tekton.scripts.' . $field['type']))
+                @foreach($scripts as $script)
+                    @php(array_push($tektonScripts, $script))
+                    <script src="{{ asset($script) }}" type="text/javascript"></script>
+                @endforeach
             @endif
         @endforeach
     @endforeach

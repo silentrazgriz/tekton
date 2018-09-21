@@ -12,3 +12,4 @@
         <label class="custom-control-label" for="{{ $field['name'] }}-{{ $index }}">{{ $choice['text'] }}</label>
     </div>
 @endforeach
+@include('tekton::components.hint')

@@ -17,6 +17,7 @@ class FieldType
     const PASSWORD              = 'password';
     const NUMBER                = 'number';
     const PHONE                 = 'phone';
+    const MONEY                 = 'money';
     const TEXTAREA              = 'textarea';
 
     // DatePicker

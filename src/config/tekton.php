@@ -5,26 +5,30 @@ use Gaia\Tekton\Component\Value\ButtonPlacement;
 return [
     'scripts' => [
         // Text
-        'text'                  => false,
-        'email'                 => false,
-        'password'              => false,
-        'number'                => false,
-        'phone'                 => true,
-        'textarea'              => false,
+        'text'                  => [],
+        'email'                 => [],
+        'password'              => [],
+        'number'                => [],
+        'phone'                 => [
+            'vendor/cleave/cleave.min.js',
+            'vendor/cleave/cleave-phone.id.js',
+            'vendor/tekton/js/phone.js'
+        ],
+        'textarea'              => [],
         // Date
-        'date'                  => true,
-        'date-range'            => true,
+        'date'                  => [],
+        'date-range'            => [],
         // Files
-        'file-upload'           => true,
-        'file-upload-multiple'  => true,
-        'image-upload'          => true,
-        'image-upload-multiple' => true,
+        'file-upload'           => [],
+        'file-upload-multiple'  => [],
+        'image-upload'          => [],
+        'image-upload-multiple' => [],
         // Dropdown & Choice
-        'select'                => true,
-        'radio'                 => false,
-        'checkbox'              => false,
+        'select'                => [],
+        'radio'                 => [],
+        'checkbox'              => [],
         // Hidden
-        'hidden'                => false
+        'hidden'                => []
     ],
     'load-styles' => [
         'css/app.css',
@@ -65,6 +69,10 @@ return [
         'helper'         => null,
         'inline'         => false,
         'required'       => true,
+        'validation'    => [
+            'valid' => '',
+            'invalid' => ''
+        ],
     ],
     'rows' => [
         'style'     => [

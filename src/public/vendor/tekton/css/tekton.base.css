@@ -7,3 +7,8 @@
 .custom-control-label:before {
     top: .2rem;
 }
+
+.was-validated .form-control:valid~.hint,
+.was-validated .form-control:invalid~.hint {
+    display: none;
+}
