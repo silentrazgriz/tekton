@@ -44,6 +44,7 @@ return [
         'vendor/tekton/css/tekton.base.css'
     ],
     'load-scripts' => [
+        'js/app.js',
         'vendor/sizzle/sizzle.min.js',
         'vendor/flatpickr/flatpickr.min.js',
         'vendor/tekton/js/tekton.base.js'
