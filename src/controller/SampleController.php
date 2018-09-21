@@ -6,8 +6,8 @@ declare(strict_types=1);
 namespace Gaia\Tekton\Controller;
 
 
-use App\Forms\LoginForm;
-use App\Forms\SampleForm;
+use Gaia\Tekton\Form\LoginForm;
+use Gaia\Tekton\Form\SampleForm;
 
 /**
  * Class SampleController
