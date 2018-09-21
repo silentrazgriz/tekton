@@ -7,7 +7,6 @@
     @yield('styles')
 </head>
 <body>
-    @include('tekton::components.loading')
     <div class="container">
         @yield('content')
     </div>
