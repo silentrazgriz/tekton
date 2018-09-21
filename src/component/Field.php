@@ -61,7 +61,7 @@ class Field
         return [
             'name'      => $this->name,
             'type'      => $this->type,
-            'values'     => $this->values,
+            'values'    => $this->values,
             'options'   => $this->options
         ];
     }

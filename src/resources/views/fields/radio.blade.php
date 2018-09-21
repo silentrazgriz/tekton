@@ -1,12 +1,14 @@
 @foreach($field['values'] as $index => $choice)
-    <label class="form-radio {{ $field['options']['inline'] ? 'form-inline' : '' }}">
+    <div class="custom-control custom-radio {{ $field['options']['inline'] ? 'custom-control-inline' : '' }}">
         <input
             type="radio"
+            id="{{ $field['name'] }}-{{ $index }}"
             name="{{ $field['name'] }}"
+            class="custom-control-input"
             value="{{ $choice['value'] }}"
             {{ $field['options']['value'] == $choice['value'] ||
                 ($field['options']['value'] == null && $choice['checked']) ? 'checked' : '' }}
         />
-        <i class="form-icon"></i> {{ $choice['text'] }}
-    </label>
+        <label class="custom-control-label" for="{{ $field['name'] }}-{{ $index }}">{{ $choice['text'] }}</label>
+    </div>
 @endforeach

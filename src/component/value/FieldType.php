@@ -33,7 +33,6 @@ class FieldType
     const SELECT                = 'select';
     const RADIO                 = 'radio';
     const CHECKBOX              = 'checkbox';
-    const SWITCH                = 'switch';
 
     // Other
     const HIDDEN                = 'hidden';

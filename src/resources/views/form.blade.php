@@ -1,21 +1,17 @@
-<div class="columns">
-    <div class="{{ $tekton['options']['style'] }}">
-        <form
-                @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
-                method="{{ $tekton['method'] }}"
-                action="{{ $tekton['url'] }}"
-                class="tekton-form"
-        >
-            @csrf
-            @include('tekton::buttons.group.top', ['button' => $tekton['options']['button']])
-            <h3 class="column {{ $tekton['options']['labelAlign'] }}">{{ $tekton['title'] }}</h3>
-            @foreach($tekton['rows'] as $row)
-                @include('tekton::row', ['row' => $row])
-            @endforeach
-            @include('tekton::buttons.group.bottom', ['button' => $tekton['options']['button']])
-        </form>
-    </div>
-</div>
+<form
+        @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
+        method="{{ $tekton['method'] }}"
+        action="{{ $tekton['url'] }}"
+        class="tekton-form"
+>
+    @csrf
+    @include('tekton::buttons.group.top', ['button' => $tekton['options']['button']])
+    <h3 class="col {{ $tekton['options']['labelAlign'] }}">{{ $tekton['title'] }}</h3>
+    @foreach($tekton['rows'] as $row)
+        @include('tekton::row', ['row' => $row])
+    @endforeach
+    @include('tekton::buttons.group.bottom', ['button' => $tekton['options']['button']])
+</form>
 
 @section('tekton-styles')
     @php($tektonStyles = [])

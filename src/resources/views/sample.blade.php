@@ -1,9 +1,12 @@
 @extends('tekton::base')
 
 @section('content')
-    @include('tekton::form')
+    <div class="row">
+        <div class="col">
+            @include('tekton::form')
+        </div>
+    </div>
 @endsection
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('vendor/tekton/css/tekton.sample.css') }}"/>
 @endsection

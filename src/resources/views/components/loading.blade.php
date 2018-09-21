@@ -1,1 +1,0 @@
-<div class="loading-wrapper"><div class="loading loading-lg"></div></div>

@@ -33,8 +33,7 @@ class SampleForm extends Form
                             'text' => 'Save'
                         ]
                     ]
-                ],
-                'style' => 'column col-6 col-mx-auto'
+                ]
             ]
         );
     }
@@ -86,12 +85,9 @@ class SampleForm extends Form
                     ['text' => 'Choice 2', 'value' => '2', 'checked' => false],
                     ['text' => 'Choice 3', 'value' => '3', 'checked' => false],
                     ['text' => 'Choice 4', 'value' => '4', 'checked' => true],
-                ]
-            )
-            ->addField('switch', 'Switch', FieldType::SWITCH, [],
+                ],
                 [
-                    'rows' => ['label' => false],
-                    'fields' => ['placeholder' => 'Switch']
+                    'fields' => ['inline' => true]
                 ]
             );
     }

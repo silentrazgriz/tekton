@@ -1,4 +1,4 @@
-<div class="column col-12 text-center">
+<div class="col text-center">
     @if($button['action']['reset']['enabled'])
         <button type="submit" class="btn">{{ $button['action']['reset']['text'] }}</button>
     @endif

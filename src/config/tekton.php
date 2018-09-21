@@ -23,12 +23,11 @@ return [
         'select'                => true,
         'radio'                 => false,
         'checkbox'              => false,
-        'switch'                => false,
         // Hidden
         'hidden'                => false
     ],
     'load-styles' => [
-        'vendor/spectre/spectre.min.css',
+        'css/app.css',
         'vendor/fontawesome/css/all.css',
         'vendor/flatpickr/flatpickr.min.css',
         'vendor/tekton/css/tekton.base.css'
@@ -57,20 +56,20 @@ return [
             ]
         ],
         'labelAlign'    => 'text-center',
-        'style'         => 'column col-12',
+        'style'         => 'col',
     ],
     'fields' => [
-        'style'          => 'column col-12',
+        'style'          => 'col',
         'value'          => null,
-		'placeholder'    => '',
+        'placeholder'    => '',
         'helper'         => null,
         'inline'         => false,
         'required'       => true,
     ],
     'rows' => [
         'style'     => [
-            'label' => 'column col-3',
-            'input' => 'col-9'
+            'label' => 'col-2',
+            'input' => 'col-10'
         ],
         'label'     => true,
     ]
