@@ -60,11 +60,12 @@ return [
         'style'         => 'column col-12',
     ],
     'fields' => [
-        'style'     => 'column col-12',
-        'value'     => null,
-        'helper'    => null,
-        'inline'    => false,
-        'required'  => true,
+        'style'          => 'column col-12',
+        'value'          => null,
+		'placeholder'    => '',
+        'helper'         => null,
+        'inline'         => false,
+        'required'       => true,
     ],
     'rows' => [
         'style'     => [
