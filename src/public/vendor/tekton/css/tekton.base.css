@@ -2,6 +2,20 @@
     margin-top: 50px;
 }
 
+/* Flatpickr Modification */
+.flatpickr-months .flatpickr-month {
+    height: 50px;
+}
+
+.flatpickr-current-month {
+    line-height: 2.5;
+}
+
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+    top: 8px;
+}
+
 /* Bootstrap Modification */
 .custom-control-label:after,
 .custom-control-label:before {

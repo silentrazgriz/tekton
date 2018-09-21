@@ -44,10 +44,13 @@ class SampleForm extends Form
     protected function build(): void
     {
         $this->addField('text', 'Text', FieldType::TEXT, [],
-                [
-                    'fields' => ['placeholder' => 'Text']
+            [
+                'fields' => [
+                    'placeholder' => 'Text',
+                    'validation' => ['invalid' => 'Please fill this field']
                 ]
-            )
+            ]
+        )
             ->addField('email', 'Email', FieldType::EMAIL, [],
                 [
                     'fields' => ['placeholder' => 'Email']
@@ -66,6 +69,11 @@ class SampleForm extends Form
             ->addField('phone', 'Phone', FieldType::PHONE, [],
                 [
                     'fields' => ['placeholder' => 'Phone']
+                ]
+            )
+            ->addField('money', 'Money', FieldType::MONEY, [],
+                [
+                    'fields' => ['placeholder' => 'Money']
                 ]
             )
             ->addField('textarea', 'Textarea', FieldType::TEXTAREA, [],
@@ -88,6 +96,16 @@ class SampleForm extends Form
                 ],
                 [
                     'fields' => ['inline' => true]
+                ]
+            )
+            ->addField('date', 'Date', FieldType::DATE, [],
+                [
+                    'fields' => ['placeholder' => 'Date']
+                ]
+            )
+            ->addField('date_range', 'Date Range', FieldType::DATE_RANGE, [],
+                [
+                    'fields' => ['placeholder' => 'Date Range']
                 ]
             );
     }

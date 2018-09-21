@@ -14,10 +14,18 @@ return [
             'vendor/cleave/cleave-phone.id.js',
             'vendor/tekton/js/phone.js'
         ],
+        'money'                 => [
+            'vendor/cleave/cleave.min.js',
+            'vendor/tekton/js/money.js'
+        ],
         'textarea'              => [],
         // Date
-        'date'                  => [],
-        'date-range'            => [],
+        'date'                  => [
+            'vendor/tekton/js/date.js'
+        ],
+        'date-range'            => [
+            'vendor/tekton/js/date-range.js'
+        ],
         // Files
         'file-upload'           => [],
         'file-upload-multiple'  => [],
@@ -32,7 +40,6 @@ return [
     ],
     'load-styles' => [
         'css/app.css',
-        'vendor/fontawesome/css/all.css',
         'vendor/flatpickr/flatpickr.min.css',
         'vendor/tekton/css/tekton.base.css'
     ],

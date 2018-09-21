@@ -1,9 +1,9 @@
 <input
-        type="number"
+        type="text"
         id="{{ $field['name'] }}"
         name="{{ $field['name'] }}"
         value="{{ $field['options']['value'] ?? '' }}"
-        class="form-control"
+        class="form-control tekton-money"
         placeholder="{{ $field['options']['placeholder'] }}"
         @if($field['options']['required']) required @endif
 />
