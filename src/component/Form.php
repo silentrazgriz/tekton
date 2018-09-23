@@ -101,6 +101,12 @@ abstract class Form
         return $this;
     }
 
+    /**
+     * @param string $label
+     * @param array $fields
+     * @param array $options
+     * @return $this
+     */
     public function addRow(
         string $label,
         array $fields,
@@ -125,12 +131,12 @@ abstract class Form
     /**
      * @param string $view
      * @param array $value
-     * @return string
-     * @throws \Throwable
+     * @param array $defaultValues
+     * @return mixed
      */
-    public function render(string $view, array $value = [])
+    public function render(string $view, array $value = [], array $defaultValues = [])
     {
-        $this->build();
+        $this->build($defaultValues);
 
         $payload = array_merge(
             $value,
@@ -161,7 +167,7 @@ abstract class Form
     }
 
     /**
-     * @return void
+     * @param array $values
      */
-    abstract protected function build() : void;
+    abstract protected function build(array $values = []) : void;
 }

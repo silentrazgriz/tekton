@@ -7,7 +7,7 @@
 >
     @csrf
     @include('tekton::buttons.group.top', ['button' => $tekton['options']['button']])
-    <h3 class="col {{ $tekton['options']['labelAlign'] }}">{{ $tekton['title'] }}</h3>
+    <h3 class="{{ $tekton['options']['labelAlign'] }}">{{ $tekton['title'] }}</h3>
     @foreach($tekton['rows'] as $row)
         @include('tekton::row', ['row' => $row])
     @endforeach
