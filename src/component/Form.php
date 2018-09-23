@@ -80,25 +80,19 @@ abstract class Form
      * @param string $type
      * @param array $values
      * @param array $options
-     * @return $this
+     * @return Field
      */
     public function addField(
         string $name,
         string $label,
-        string $type = FieldType::TEXT,
-        array $values = [],
-        array $options = []
-    ) {
-        // working on radio button values
+        string $type = FieldType::TEXT
+    ): Field {
         $row = new RowField(count($this->rows), $label, $options['rows'] ?? []);
-        $row->add($name, $type, $values, $options['fields'] ?? []);
-        
-        array_push(
-            $this->rows,
-            $row
-        );
+        $field = $row->add($name, $type, $options['fields'] ?? []);
 
-        return $this;
+        array_push($this->rows, $row);
+
+        return $field;
     }
 
     /**
@@ -111,21 +105,20 @@ abstract class Form
         string $label,
         array $fields,
         array $options = []
-    ) {
+    ): RowField {
         $row = new RowField(count($this->rows), $label, $options);
 
         foreach ($fields as $field) {
             $row->add(
                 $field['name'],
                 $field['type'],
-                $field['values'] ?? null,
                 $field['options'] ?? []
             );
         }
 
         array_push($this->rows, $row);
 
-        return $this;
+        return $row;
     }
 
     /**
@@ -149,7 +142,7 @@ abstract class Form
     /**
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         $rows = [];
         foreach ($this->rows as $row) {
@@ -169,5 +162,5 @@ abstract class Form
     /**
      * @param array $values
      */
-    abstract protected function build(array $values = []) : void;
+    abstract protected function build(array $values = []): void;
 }

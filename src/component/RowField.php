@@ -57,27 +57,25 @@ class RowField
     /**
      * @param string $name
      * @param string $type
-     * @param array $values
      * @param array $options
-     * @return RowField
+     * @return Field
      */
     public function add(
         string $name,
         string $type = FieldType::TEXT,
-        array $values = [],
         array $options = []
-    ) : RowField {
-        $field = new Field($name, $type, $values, $options);
+    ): Field {
+        $field = new Field($name, $type, $options);
 
         array_push($this->fields, $field);
 
-        return $this;
+        return $field;
     }
 
     /**
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         $fields = [];
         foreach (array_values($this->fields) as $field) {

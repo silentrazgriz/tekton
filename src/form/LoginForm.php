@@ -41,9 +41,11 @@ class LoginForm extends Form
     /**
      * @return void
      */
-    protected function build(): void
+    protected function build(array $values = []): void
     {
-        $this->addField('email', 'Email', FieldType::EMAIL, ['helper' => 'Please input your email'])
-            ->addField('password', 'Password', FieldType::PASSWORD);
+        $this->addField('email', 'Email', FieldType::EMAIL)
+            ->setHint('Please input your email');
+
+        $this->addField('password', 'Password', FieldType::PASSWORD);
     }
 }

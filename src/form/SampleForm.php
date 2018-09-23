@@ -41,72 +41,54 @@ class SampleForm extends Form
     /**
      * @return void
      */
-    protected function build(): void
+    protected function build(array $values = []): void
     {
-        $this->addField('text', 'Text', FieldType::TEXT, [],
-            [
-                'fields' => [
-                    'placeholder' => 'Text',
-                    'validation' => ['invalid' => 'Please fill this field']
-                ]
-            ]
-        )
-            ->addField('email', 'Email', FieldType::EMAIL, [],
-                [
-                    'fields' => ['placeholder' => 'Email']
-                ]
-            )
-            ->addField('password', 'Password', FieldType::PASSWORD, [],
-                [
-                    'fields' => ['placeholder' => 'Password']
-                ]
-            )
-            ->addField('number', 'Number', FieldType::NUMBER, [],
-                [
-                    'fields' => ['placeholder' => 'Number']
-                ]
-            )
-            ->addField('phone', 'Phone', FieldType::PHONE, [],
-                [
-                    'fields' => ['placeholder' => 'Phone']
-                ]
-            )
-            ->addField('money', 'Money', FieldType::MONEY, [],
-                [
-                    'fields' => ['placeholder' => 'Money']
-                ]
-            )
-            ->addField('textarea', 'Textarea', FieldType::TEXTAREA, [],
-                [
-                    'fields' => ['placeholder' => 'Textarea']
-                ]
-            )
-            ->addField('radio', 'Radio', FieldType::RADIO,
+        $this->addField('text', 'Text', FieldType::TEXT)
+            ->setPlaceholder('Text')
+            ->setInvalidMessage('Please fill this field');
+
+        $this->addField('email', 'Email', FieldType::EMAIL)
+            ->setPlaceholder('Email');
+
+        $this->addField('password', 'Password', FieldType::PASSWORD)
+            ->setPlaceholder('Password');
+
+        $this->addField('number', 'Number', FieldType::NUMBER)
+            ->setPlaceholder('Number');
+
+        $this->addField('phone', 'Phone', FieldType::PHONE)
+            ->setPlaceholder('Phone');
+
+        $this->addField('money', 'Money', FieldType::MONEY)
+            ->setPlaceholder('Money');
+
+        $this->addField('textarea', 'Textarea', FieldType::TEXTAREA)
+            ->setPlaceholder('Textarea');
+
+        $this->addField('radio', 'Radio', FieldType::RADIO)
+            ->setPlaceholder('Money')
+            ->setChoiceValues(
                 [
                     ['text' => 'Choice 1', 'value' => '1', 'checked' => true],
                     ['text' => 'Choice 2', 'value' => '2', 'checked' => false],
                 ]
-            )
-            ->addField('checkbox', 'Checkbox', FieldType::CHECKBOX,
+            );
+
+        $this->addField('checkbox', 'Checkbox', FieldType::CHECKBOX)
+            ->setOptions(['inline' => true])
+            ->setChoiceValues(
                 [
                     ['text' => 'Choice 1', 'value' => '1', 'checked' => true],
                     ['text' => 'Choice 2', 'value' => '2', 'checked' => false],
                     ['text' => 'Choice 3', 'value' => '3', 'checked' => false],
                     ['text' => 'Choice 4', 'value' => '4', 'checked' => true],
-                ],
-                [
-                    'fields' => ['inline' => true]
-                ]
-            )
-            ->addField('date', 'Date', FieldType::DATE, [],
-                [
-                    'fields' => ['placeholder' => 'Date']
-                ]
-            )
-            ->addField('date_range', 'Date Range', FieldType::DATE_RANGE, [],
-                [
-                    'fields' => ['placeholder' => 'Date Range']
                 ]
             );
+
+        $this->addField('date', 'Date', FieldType::DATE)
+            ->setPlaceholder('Date');
+
+        $this->addField('date_range', 'Date Range', FieldType::DATE_RANGE)
+            ->setPlaceholder('Date Range');
     }
 }
