@@ -134,11 +134,10 @@ abstract class Form
     }
 
     /**
-     * @param string $view
      * @param array $options
      * @return mixed
      */
-    public function render(string $view, array $options = [])
+    public function render(array $options = [])
     {
         $this->build($this->defaultValues);
 
@@ -147,7 +146,7 @@ abstract class Form
             ['tekton' => $this->toArray()]
         );
 
-        return view($view, $payload);
+        return view(config('tekton.default-view'), $payload);
     }
 
     /**

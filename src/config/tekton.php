@@ -88,5 +88,6 @@ return [
             'input' => 'col-10'
         ],
         'label'     => true,
-    ]
+    ],
+    'default-view' => 'tekton::sample'
 ];
