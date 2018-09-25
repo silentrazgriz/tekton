@@ -22,7 +22,7 @@ class SampleController
     public function sample()
     {
         $form = new SampleForm();
-        return $form->render('tekton::sample');
+        return $form->render();
     }
 
     /**
@@ -32,6 +32,6 @@ class SampleController
     public function login()
     {
         $form = new LoginForm();
-        return $form->render('tekton::sample');
+        return $form->render();
     }
 }
