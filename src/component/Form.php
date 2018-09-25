@@ -50,6 +50,11 @@ abstract class Form
     protected $scripts = [];
 
     /**
+     * @var array
+     */
+    private $defaultValues = [];
+
+    /**
      * Form constructor.
      * @param string $method
      * @param string|null $url
@@ -63,7 +68,8 @@ abstract class Form
         string $id = null,
         string $title = '',
         array $options = []
-    ) {
+    )
+    {
         $this->method = $method;
         $this->url = $url;
         $this->id = $id;
@@ -88,11 +94,12 @@ abstract class Form
         string $type = FieldType::TEXT,
         array $values = [],
         array $options = []
-    ) {
+    )
+    {
         // working on radio button values
         $row = new RowField(count($this->rows), $label, $options['rows'] ?? []);
         $row->add($name, $type, $values, $options['fields'] ?? []);
-        
+
         array_push(
             $this->rows,
             $row
@@ -111,7 +118,8 @@ abstract class Form
         string $label,
         array $fields,
         array $options = []
-    ) {
+    )
+    {
         $row = new RowField(count($this->rows), $label, $options);
 
         foreach ($fields as $field) {
@@ -128,18 +136,22 @@ abstract class Form
         return $this;
     }
 
+    public function setDefaultValues(array $values)
+    {
+        $this->defaultValues = $values;
+    }
+
     /**
      * @param string $view
-     * @param array $value
-     * @param array $defaultValues
+     * @param array $options
      * @return mixed
      */
-    public function render(string $view, array $value = [], array $defaultValues = [])
+    public function render(string $view, array $options = [])
     {
-        $this->build($defaultValues);
+        $this->build($this->defaultValues);
 
         $payload = array_merge(
-            $value,
+            $options,
             ['tekton' => $this->toArray()]
         );
 
@@ -149,7 +161,7 @@ abstract class Form
     /**
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         $rows = [];
         foreach ($this->rows as $row) {
@@ -157,17 +169,17 @@ abstract class Form
         }
 
         return [
-            'id'        => $this->id,
-            'method'    => $this->method,
-            'url'       => $this->url,
-            'title'     => $this->title,
-            'rows'      => $rows,
-            'options'   => $this->options
+            'id' => $this->id,
+            'method' => $this->method,
+            'url' => $this->url,
+            'title' => $this->title,
+            'rows' => $rows,
+            'options' => $this->options
         ];
     }
 
     /**
      * @param array $values
      */
-    abstract protected function build(array $values = []) : void;
+    abstract protected function build(array $values = []): void;
 }
