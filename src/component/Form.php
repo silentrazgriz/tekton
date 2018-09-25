@@ -84,58 +84,50 @@ abstract class Form
      * @param string $name
      * @param string $label
      * @param string $type
-     * @param array $values
-     * @param array $options
-     * @return $this
+     * @return Field
      */
     public function addField(
         string $name,
         string $label,
-        string $type = FieldType::TEXT,
-        array $values = [],
-        array $options = []
-    )
-    {
-        // working on radio button values
+        string $type = FieldType::TEXT
+    ): Field {
         $row = new RowField(count($this->rows), $label, $options['rows'] ?? []);
-        $row->add($name, $type, $values, $options['fields'] ?? []);
+        $field = $row->add($name, $type, $options['fields'] ?? []);
 
-        array_push(
-            $this->rows,
-            $row
-        );
+        array_push($this->rows, $row);
 
-        return $this;
+        return $field;
     }
 
     /**
      * @param string $label
      * @param array $fields
      * @param array $options
-     * @return $this
+     * @return RowField
      */
     public function addRow(
         string $label,
         array $fields,
         array $options = []
-    )
-    {
+    ): RowField {
         $row = new RowField(count($this->rows), $label, $options);
 
         foreach ($fields as $field) {
             $row->add(
                 $field['name'],
                 $field['type'],
-                $field['values'] ?? null,
                 $field['options'] ?? []
             );
         }
 
         array_push($this->rows, $row);
 
-        return $this;
+        return $row;
     }
 
+    /**
+     * @param array $values
+     */
     public function setDefaultValues(array $values)
     {
         $this->defaultValues = $values;
