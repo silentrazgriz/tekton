@@ -29,7 +29,9 @@ return [
         // Files
         'file-upload'           => [],
         'file-upload-multiple'  => [],
-        'image-upload'          => [],
+        'image-upload'          => [
+            'vendor/tekton/js/image-preview.js'
+        ],
         'image-upload-multiple' => [],
         // Dropdown & Choice
         'select'                => [],

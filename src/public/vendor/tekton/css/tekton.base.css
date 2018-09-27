@@ -1,5 +1,20 @@
-.tekton-form {
-    margin-top: 50px;
+.tekton-image-preview {
+    width: auto;
+    height: 150px;
+    display: none;
+}
+
+.tekton-image-preview.tekton-show-preview {
+    display: block;
+}
+
+.tekton-image-preview img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.tekton-image-upload:hover {
+    cursor: pointer;
 }
 
 /* Flatpickr Modification */
