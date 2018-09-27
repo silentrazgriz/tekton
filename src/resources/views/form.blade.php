@@ -1,11 +1,12 @@
 <form
         @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
-        method="{{ $tekton['method'] }}"
+        method="POST"
         action="{{ $tekton['url'] }}"
         class="tekton-form needs-validation"
         novalidate
 >
     @csrf
+    @include('tekton::components.method')
     @include('tekton::buttons.group.top', ['button' => $tekton['options']['button']])
     <h3 class="{{ $tekton['options']['labelAlign'] }}">{{ $tekton['title'] }}</h3>
     @foreach($tekton['rows'] as $row)
