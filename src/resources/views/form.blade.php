@@ -1,10 +1,10 @@
 <form
-        @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
-        method="POST"
-        action="{{ $tekton['url'] }}"
-        class="tekton-form needs-validation"
-        enctype="multipart/form-data"
-        novalidate
+    @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
+    method="POST"
+    action="{{ $tekton['url'] }}"
+    class="tekton-form needs-validation"
+    enctype="multipart/form-data"
+    novalidate
 >
     @csrf
     @include('tekton::components.method')
