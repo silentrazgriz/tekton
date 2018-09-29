@@ -3,6 +3,7 @@
         method="POST"
         action="{{ $tekton['url'] }}"
         class="tekton-form needs-validation"
+        enctype="multipart/form-data"
         novalidate
 >
     @csrf
