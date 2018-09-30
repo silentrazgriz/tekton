@@ -1,8 +1,6 @@
-let cleavePhones = [];
-
 let tektonPhones = Sizzle('.tekton-phone');
 tektonPhones.forEach((phone) => {
-    cleavePhones.push(new Cleave(phone, {
+    cleaves.push(new Cleave(phone, {
         phone: true
     }));
 

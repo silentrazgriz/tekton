@@ -1,4 +1,6 @@
 // Validation
+let cleaves = [];
+
 let forms = Sizzle('.needs-validation');
 forms.forEach((form) => {
     form.addEventListener('submit', (event) => {
@@ -6,15 +8,10 @@ forms.forEach((form) => {
             event.preventDefault();
             event.stopPropagation();
         } else {
-            getCleaveRawValue(cleaveMoneys);
-            getCleaveRawValue(cleavePhones);
+            cleaves.forEach((item) => {
+                item.element.value = item.getRawValue();
+            });
         }
         form.classList.add('was-validated');
     });
 });
-
-function getCleaveRawValue(collections) {
-    collections.forEach((item) => {
-        item.element.value = item.getRawValue();
-    });
-}
