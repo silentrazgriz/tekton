@@ -73,12 +73,13 @@ return [
         'style'         => 'col',
     ],
     'fields' => [
-        'style'          => 'col',
-        'value'          => null,
-        'placeholder'    => '',
-        'helper'         => null,
-        'inline'         => false,
-        'required'       => true,
+        'style'         => 'col',
+        'value'         => null,
+        'placeholder'   => '',
+        'helper'        => null,
+        'inline'        => false,
+        'required'      => true,
+        'readonly'      => false,
         'validation'    => [
             'valid' => '',
             'invalid' => ''
