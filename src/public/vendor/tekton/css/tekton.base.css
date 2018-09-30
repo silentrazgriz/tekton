@@ -31,6 +31,19 @@
     top: 8px;
 }
 
+.flatpickr-months .flatpickr-prev-month {
+    left: 15px !important;
+}
+
+.flatpickr-months .flatpickr-next-month {
+    right: 15px !important;
+}
+
+.flatpickr-calendar {
+    width: auto;
+    padding: 0 15px 15px;
+}
+
 /* Bootstrap Modification */
 .custom-control-label:after,
 .custom-control-label:before {

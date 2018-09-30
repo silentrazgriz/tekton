@@ -1,11 +1,20 @@
 // Validation
 let forms = Sizzle('.needs-validation');
-let validation = Array.prototype.filter.call(forms, (form) => {
+forms.forEach((form) => {
     form.addEventListener('submit', (event) => {
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+        } else {
+            getCleaveRawValue(cleaveMoneys);
+            getCleaveRawValue(cleavePhones);
         }
         form.classList.add('was-validated');
     });
 });
+
+function getCleaveRawValue(collections) {
+    collections.forEach((item) => {
+        item.element.value = item.getRawValue();
+    });
+}

@@ -1,10 +1,10 @@
 <form
-    @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
-    method="POST"
-    action="{{ $tekton['url'] }}"
-    class="tekton-form needs-validation"
-    enctype="multipart/form-data"
-    novalidate
+        @if(null != $tekton['id']) id="{{ $tekton['id'] }}" @endif
+method="POST"
+        action="{{ $tekton['url'] }}"
+        class="tekton-form needs-validation"
+        enctype="multipart/form-data"
+        novalidate
 >
     @csrf
     @include('tekton::components.method')
@@ -36,11 +36,13 @@
     @endforeach
     @foreach($tekton['rows'] as $row)
         @foreach($row['fields'] as $field)
-            @if (config('tekton.scripts.' . $field['type']) && !in_array($field['type'], $tektonScripts))
+            @if (config('tekton.scripts.' . $field['type']))
                 @php($scripts = config('tekton.scripts.' . $field['type']))
                 @foreach($scripts as $script)
-                    @php(array_push($tektonScripts, $script))
-                    <script src="{{ asset($script) }}" type="text/javascript"></script>
+                    @if(!in_array($script, $tektonScripts))
+                        @php(array_push($tektonScripts, $script))
+                        <script src="{{ asset($script) }}" type="text/javascript"></script>
+                    @endif
                 @endforeach
             @endif
         @endforeach
