@@ -115,6 +115,26 @@ class Field
     }
 
     /**
+     * @param $value
+     * @return Field
+     */
+    public function setRequired($value): Field
+    {
+        $this->options['required'] = $value;
+        return $this;
+    }
+
+    /**
+     * @param $value
+     * @return Field
+     */
+    public function setReadonly($value): Field
+    {
+        $this->options['readonly'] = $value;
+        return $this;
+    }
+
+    /**
      * @param array $options
      * @return Field
      */
