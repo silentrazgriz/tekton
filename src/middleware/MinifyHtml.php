@@ -40,6 +40,8 @@ class MinifyHtml
             "/\t/"                          => '',
             '/ +/'                          => ' ',
             '/> </'                         => '><',
+            '/ > /'                         => '>',
+            '/ <\//'                        => '>',
         ];
         if (false !== strpos($buffer, '<pre>')) {
             $replace = [
@@ -49,6 +51,8 @@ class MinifyHtml
                 "/>\n</"                    => '><',
                 "/>\s+\n</"                 => '><',
                 "/>\n\s+</"                 => '><',
+                "/\s+>\s+/"                 => '>',
+                '/\s+<\//'                    => '>',
             ];
         }
         $buffer = preg_replace(array_keys($replace), array_values($replace), $buffer);
