@@ -1,9 +1,9 @@
 // Validation
 let cleaves = [];
 
-$('.needs-validation').each(() => {
-    $(this).on('submit', (event) => {
-        if ($(this).checkValidity() === false) {
+$('.needs-validation').submit((event) => {
+    $('.needs-validation').each((index, form) => {
+        if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         } else {
@@ -11,6 +11,6 @@ $('.needs-validation').each(() => {
                 item.element.value = item.getRawValue();
             });
         }
-        $(this).addClass('was-validated');
+        form.classList.add('was-validated');
     });
 });
