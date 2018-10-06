@@ -32,7 +32,6 @@ class FieldType
 
     // Select
     const SELECT                = 'select';
-    const SELECT2               = 'select2';
     const RADIO                 = 'radio';
     const CHECKBOX              = 'checkbox';
 

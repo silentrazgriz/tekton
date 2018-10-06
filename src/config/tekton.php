@@ -38,10 +38,6 @@ return [
             'vendor/select2/select2.min.js',
             'vendor/tekton/js/select.js'
         ],
-        'select2'               => [
-            'vendor/select2/select2.min.js',
-            'vendor/tekton/js/select2.js'
-        ],
         'radio'                 => [],
         'checkbox'              => [],
         // Hidden

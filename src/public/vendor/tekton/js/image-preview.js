@@ -1,5 +1,5 @@
-$('.tekton-image-upload').each((imageUpload) => {
-    imageUpload.addEventListener('change', (e) => {
+$('.tekton-image-upload').each((index, imageUpload) => {
+    imageUpload.change((e) => {
         let img = $(imageUpload.dataset.target)[0];
         let container = $(imageUpload.dataset.container)[0];
 

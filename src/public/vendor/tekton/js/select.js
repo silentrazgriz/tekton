@@ -1,3 +1,1 @@
-$('.select2-no-search').select2({
-    minimumResultsForSearch: Infinity
-});
+$('.select2').select2();
