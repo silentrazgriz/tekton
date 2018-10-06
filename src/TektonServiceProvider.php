@@ -21,9 +21,6 @@ class TektonServiceProvider extends ServiceProvider
             __DIR__ . '/config' => config_path(),
             __DIR__ . '/public' => public_path()
         ]);
-
-        $this->app['router']->get('tekton/login', 'Gaia\Tekton\Controller\SampleController@login');
-        $this->app['router']->get('tekton/sample', 'Gaia\Tekton\Controller\SampleController@sample');
     }
 
     /**

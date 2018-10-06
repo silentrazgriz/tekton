@@ -35,6 +35,10 @@ return [
         'image-upload-multiple' => [],
         // Dropdown & Choice
         'select'                => [],
+        'select2'               => [
+            'vendor/select2/select2.min.js',
+            'vendor/tekton/js/select2.js'
+        ],
         'radio'                 => [],
         'checkbox'              => [],
         // Hidden
@@ -43,6 +47,7 @@ return [
     'load-styles' => [
         'css/app.css',
         'vendor/flatpickr/flatpickr.min.css',
+        'vendor/select2/select2.min.css',
         'vendor/tekton/css/tekton.base.css'
     ],
     'load-scripts' => [

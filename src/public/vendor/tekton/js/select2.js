@@ -1,0 +1,1 @@
+Sizzle('.select2').select2();
