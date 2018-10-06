@@ -21,7 +21,11 @@ class MinifyHtml
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-        return $this->html($response);
+        if ($response instanceof Response) {
+            return $this->html($response);
+        } else {
+            return $response;
+        }
     }
 
     /**
