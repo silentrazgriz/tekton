@@ -1,8 +1,7 @@
 // Validation
 let cleaves = [];
 
-let forms = Sizzle('.needs-validation');
-forms.forEach((form) => {
+$('.needs-validation').each((form) => {
     form.addEventListener('submit', (event) => {
         if (form.checkValidity() === false) {
             event.preventDefault();

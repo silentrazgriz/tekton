@@ -34,7 +34,10 @@ return [
         ],
         'image-upload-multiple' => [],
         // Dropdown & Choice
-        'select'                => [],
+        'select'                => [
+            'vendor/select2/select2.min.js',
+            'vendor/tekton/js/select.js'
+        ],
         'select2'               => [
             'vendor/select2/select2.min.js',
             'vendor/tekton/js/select2.js'
@@ -52,7 +55,7 @@ return [
     ],
     'load-scripts' => [
         'js/app.js',
-        'vendor/sizzle/sizzle.min.js',
+        'vendor/jquery/jquery-3.3.1.slim.min.js',
         'vendor/flatpickr/flatpickr.min.js',
         'vendor/tekton/js/tekton.base.js'
     ],

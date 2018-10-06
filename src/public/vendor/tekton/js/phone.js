@@ -1,5 +1,4 @@
-let tektonPhones = Sizzle('.tekton-phone');
-tektonPhones.forEach((phone) => {
+$('.tekton-phone').each((phone) => {
     cleaves.push(new Cleave(phone, {
         phone: true
     }));

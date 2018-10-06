@@ -54,3 +54,12 @@
 .was-validated .form-control:invalid~.hint {
     display: none;
 }
+
+/* Select2 Modification */
+.select2-container--default .select2-selection--single {
+    border: 1px solid #e4e7ea;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding: .375rem .75rem;
+}
