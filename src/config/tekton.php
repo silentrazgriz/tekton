@@ -27,7 +27,9 @@ return [
             'vendor/tekton/js/date-range.js'
         ],
         // Files
-        'file-upload'           => [],
+        'file-upload'           => [
+            'vendor/tekton/js/file-preview.js'
+        ],
         'file-upload-multiple'  => [],
         'image-upload'          => [
             'vendor/tekton/js/image-preview.js'
