@@ -1,16 +1,17 @@
 $('.tekton-image-upload').each((index, imageUpload) => {
-    imageUpload.change((e) => {
-        let img = $(imageUpload.dataset.target)[0];
-        let container = $(imageUpload.dataset.container)[0];
+    $(imageUpload).change(function (e) {
+        let img = $(this.dataset.target);
+        let container = $(this.dataset.container);
 
         let reader = new FileReader();
         reader.onload = function(e) {
-            img.src = e.target.result;
+            img[0].src = e.target.result;
         };
-        reader.readAsDataURL(imageUpload.files[0]);
+        reader.readAsDataURL(this.files[0]);
+        $(this.dataset.filename).html(this.files[0].name);
 
-        if (!container.classList.contains('tekton-show-preview')) {
-            container.classList.add('tekton-show-preview');
+        if (!container.hasClass('tekton-show-preview')) {
+            container.addClass('tekton-show-preview');
         }
     });
 });

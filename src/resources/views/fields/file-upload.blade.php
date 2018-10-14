@@ -6,8 +6,8 @@
         class="custom-file-input tekton-file-upload"
         @if($field['options']['required']) required @endif
         @if($field['options']['readonly']) readonly @endif
-        data-target="#{{ $field['name'] }}-filename"
+        data-filename="#tekton-filename-{{ $field['name'] }}"
     />
-    <label class="custom-file-label" id="{{ $field['name'] }}-filename" for="{{ $field['name'] }}">Choose file</label>
+    <label class="custom-file-label" id="tekton-filename-{{ $field['name'] }}" for="{{ $field['name'] }}">Choose file</label>
 </div>
 @include('tekton::components.hint')

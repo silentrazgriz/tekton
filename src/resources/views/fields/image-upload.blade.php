@@ -1,16 +1,17 @@
 <div class="custom-file">
     <input
-            type="file"
-            id="{{ $field['name'] }}"
-            name="{{ $field['name'] }}"
-            class="custom-file-input tekton-image-upload"
-            accept="image/*"
-            @if($field['options']['required']) required @endif
-            @if($field['options']['readonly']) readonly @endif
-            data-target="#tekton-preview-{{ $field['name'] }}"
-            data-container="#tekton-container-{{ $field['name'] }}"
+        type="file"
+        id="{{ $field['name'] }}"
+        name="{{ $field['name'] }}"
+        class="custom-file-input tekton-image-upload"
+        accept="image/*"
+        @if($field['options']['required']) required @endif
+        @if($field['options']['readonly']) readonly @endif
+        data-target="#tekton-preview-{{ $field['name'] }}"
+        data-container="#tekton-container-{{ $field['name'] }}"
+        data-filename="#tekton-filename-{{ $field['name'] }}"
     />
-    <label class="custom-file-label" for="{{ $field['name'] }}">Choose image</label>
+    <label class="custom-file-label" id="tekton-filename-{{ $field['name'] }}" for="{{ $field['name'] }}">Choose image</label>
 </div>
 <div id="tekton-container-{{ $field['name'] }}"
      class="tekton-image-preview mt-3 {{ isset($field['options']['value']) ? 'tekton-show-preview' : '' }}"
