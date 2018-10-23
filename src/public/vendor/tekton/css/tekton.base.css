@@ -1,9 +1,14 @@
 .tekton-image-preview {
     width: auto;
     height: 150px;
+}
+
+.tekton-preview,
+.tekton-image-preview {
     display: none;
 }
 
+.tekton-preview.tekton-show-preview,
 .tekton-image-preview.tekton-show-preview {
     display: block;
 }
@@ -16,6 +21,10 @@
 .tekton-image-upload:hover,
 .tekton-file-upload:hover {
     cursor: pointer;
+}
+
+.tekton-date[readonly] {
+    background: white !important;
 }
 
 /* Flatpickr Modification */
