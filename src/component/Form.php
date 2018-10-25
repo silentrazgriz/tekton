@@ -126,14 +126,6 @@ abstract class Form
     }
 
     /**
-     * @param array $values
-     */
-    public function setDefaultValues(array $values)
-    {
-        $this->defaultValues = $values;
-    }
-
-    /**
      * @param array $options
      * @return mixed
      */
@@ -167,6 +159,46 @@ abstract class Form
             'rows' => $rows,
             'options' => $this->options
         ];
+    }
+
+    /**
+     * @param array $values
+     */
+    public function setDefaultValues(array $values)
+    {
+        $this->defaultValues = $values;
+    }
+
+    /**
+     * @param $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @param $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param $method
+     */
+    public function setMethod($method)
+    {
+        $this->method = $method;
+    }
+
+    /**
+     * @param $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
