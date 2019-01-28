@@ -7,7 +7,7 @@
 >
     @foreach($field['values'] as $choice)
         <option
-            value="{{ $choice['value'] }}"
+            @if (null != $choice['value']) value="{{ $choice['value'] }}" @endif
             {{ $choice['value'] == $field['options']['value'] ? 'selected' : '' }}
         >
             {{ $choice['text'] }}
