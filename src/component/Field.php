@@ -135,6 +135,16 @@ class Field
     }
 
     /**
+     * @param $value
+     * @return Field
+     */
+    public function setDisabled($value): Field
+    {
+        $this->options['disabled'] = $value;
+        return $this;
+    }
+
+    /**
      * @param array $options
      * @return Field
      */

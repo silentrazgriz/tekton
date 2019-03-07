@@ -81,6 +81,7 @@ return [
         'inline'        => false,
         'required'      => true,
         'readonly'      => false,
+        'disabled'      => false,
         'validation'    => [
             'valid' => '',
             'invalid' => ''
