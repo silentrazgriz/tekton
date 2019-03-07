@@ -82,6 +82,7 @@ return [
         'required'      => true,
         'readonly'      => false,
         'disabled'      => false,
+        'hidden'        => false,
         'validation'    => [
             'valid' => '',
             'invalid' => ''

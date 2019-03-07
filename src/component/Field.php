@@ -145,6 +145,16 @@ class Field
     }
 
     /**
+     * @param $value
+     * @return Field
+     */
+    public function setHidden($value): Field
+    {
+        $this->options['hidden'] = $value;
+        return $this;
+    }
+
+    /**
      * @param array $options
      * @return Field
      */
